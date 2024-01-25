@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -52,6 +52,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        blue1: "#0036C3",
+        evGreen: "#00F3B9",
+        grey: {
+          300: "#E0E0E0",
+          400: "#BDBDBD",
+        },
+        rating: "#FFB400",
+        disabledText: "#00000061",
+        primaryText: "#000000DE",
+        secondaryText: "#0000008A",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,9 +82,18 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontSize: {
+        h4: ["34px", { fontWeight: "600", lineHeight: "43px" }],
+        h5: ["24px", { fontWeight: "400", lineHeight: "36px" }],
+        h6: ["20px", { fontWeight: "600", lineHeight: "25px" }],
+        subtitle2: ["16px", { fontWeight: "600", lineHeight: "20px" }],
+        body1: ["20px", { fontWeight: "400", lineHeight: "32px" }],
+        body2: ["16px", { fontWeight: "400", lineHeight: "24px" }],
+        overline: ["12px", { fontWeight: "700", lineHeight: "16px" }],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
