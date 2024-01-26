@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/app/[lang]/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Star from "@/assets/svgs/star.svg";
 import Image from "next/image";
 import Link from "next/link";

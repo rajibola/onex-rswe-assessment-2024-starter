@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/app/[lang]/components/ui/accordion";
+} from "@/components/ui/accordion";
 import { Locale } from "@/lib/i18n";
 import { useTranslation } from "@/lib/i18n/client";
 

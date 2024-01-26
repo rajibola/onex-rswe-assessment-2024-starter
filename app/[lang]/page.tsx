@@ -6,7 +6,7 @@ import {
   Sidebar,
 } from "@/app/[lang]/components";
 import { Locale, useTranslation } from "@/lib/i18n";
-import { Button } from "@/app/[lang]/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ABOUT_CAR_DATA, SPEC_LIST } from "@/constants";
 
 export default async function Home({

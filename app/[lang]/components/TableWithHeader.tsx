@@ -5,7 +5,7 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from "@/app/[lang]/components/ui/table";
+} from "@/components/ui/table";
 import { Locale } from "@/lib/i18n";
 import { useTranslation } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
