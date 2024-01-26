@@ -1,13 +1,11 @@
-import { PageHeader } from "@/app/[lang]/components/page-header";
+import { PageHeader } from "@/components/page-header";
 import Image from "next/image";
-import {
-  TableWithHeader,
-  CustomCarousel,
-  Sidebar,
-} from "@/app/[lang]/components";
 import { Locale, useTranslation } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { ABOUT_CAR_DATA, SPEC_LIST } from "@/constants";
+import { CustomCarousel } from "@/components/CustomCarousel";
+import { Sidebar } from "@/components/sidebar";
+import { TableWithHeader } from "@/components/TableWithHeader";
 
 export default async function Home({
   params: { lang },
