@@ -12,15 +12,17 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import USA from "@/assets/icon/usa.png";
 import China from "@/assets/icon/china.png";
+import India from "@/assets/icon/china.png";
 import Germany from "@/assets/icon/germany.png";
 import Image, { StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
-import { i18n } from "@/i18n.config";
+import { languages } from "@/lib/i18n";
 
 const countries: { [x: string]: StaticImageData } = {
   en: USA,
   de: Germany,
   zh: China,
+  "hi-IN": India,
 };
 
 export const CountryDropDown = () => {
@@ -48,10 +50,10 @@ export const CountryDropDown = () => {
             />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-0 w-fit">
-              {i18n.locales.map((locale) => (
+            <ul className="grid gap-3 py-4 px-4 w-fit">
+              {languages.map((locale) => (
                 <ListItem
-                  className="p-0 w-[70px] h-10 flex items-center justify-center"
+                  className="p-0 w-[70px] h-10 flex items-center justify-center m-0 overflow-hidden"
                   key={locale}
                   href={redirectedPathName(locale)}
                 >

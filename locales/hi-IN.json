@@ -1,0 +1,83 @@
+{
+  "bottomSection": {
+    "69": {
+      "7”": ""
+    },
+    "102": "102",
+    "$2": {
+      "50": ""
+    },
+    "106”": "106\"",
+    "107 hp": "107 एचपी",
+    "175”": "175”",
+    "24 kWh": "24 किलोवाट",
+    "33”": "33\"",
+    "37”": "37”",
+    "41”": "41\"",
+    "42”": "42\"",
+    "5 adults": "5 वयस्क",
+    "54”": "54”",
+    "6”": "6",
+    "73 Mi": "",
+    "90 mph": "90 मील प्रति घंटे",
+    "BEV Performance": "बीईवी प्रदर्शन",
+    "Battery Size": "बैटरी का आकार",
+    "Blue": "नीला",
+    "Body Style": "शरीर शैली",
+    "Charging": "चार्ज",
+    "Clearance": "निकासी",
+    "Cost to charge (full)": "चार्ज करने की लागत (पूर्ण)",
+    "Electric Range": "बिजली रेंज",
+    "Exterior": "बाहरी",
+    "Exterior Colour": "बाहरी रंग",
+    "Full Width": "पूरी चौड़ाई",
+    "Hatchback": "हैचबैक",
+    "Head Room Front": "प्रमुख कक्ष सामने",
+    "Head Room Rear": "हेड रूम रियर",
+    "Horsepower": "घोड़े की शक्ति",
+    "Interior": "आंतरिक भाग",
+    "Interior Colour": "आंतरिक रंग",
+    "Leg Room Front": "लेग रूम फ्रंट",
+    "Leg Room Rear": "लेग रूम रियर",
+    "Length": "लंबाई",
+    "MPGe": "एमपीजीई",
+    "N/A": "एन/ए",
+    "Seating": "बैठने की",
+    "Shoulder Room Front": "शोल्डर रूम फ्रंट",
+    "Top Speed": "उच्चतम गति",
+    "Wheelbase": "व्हीलबेस",
+    "Width": "चौड़ाई",
+    "aboutThisCar": "इस कार के बारे में",
+    "autoTransmission": "ऑटोमैटिक ट्रांसमिशन",
+    "dieselFuel": "डीजल ईंधन",
+    "displacement": "3.5L विस्थापन",
+    "interior": "आंतरिक भाग",
+    "miles": "11,594 मील",
+    "showAllSpec": "सभी विशिष्टताएँ दिखाएँ",
+    "showMore": "और दिखाओ",
+    "specifications": "विशेष विवरण"
+  },
+  "header": {
+    "eVGuides": "ईवी गाइड",
+    "findEVCars": "ईवी कारें खोजें",
+    "login": "लॉगइन साइनअप"
+  },
+  "sidebar": {
+    "2021": "2021 टेस्ला मॉडल 3",
+    "Delivery & Warranty": "वितरण",
+    "Description": "विवरण",
+    "Product Highlights": "उत्पाद हाइलाइट्स",
+    "color": "रंग",
+    "colors": {
+      "black": "काला",
+      "blue": "नीला",
+      "maroon": "लाल रंग",
+      "silver": "चाँदी"
+    },
+    "estimated": "16 अगस्त - 23 अगस्त के भीतर अनुमानित",
+    "new": "नया",
+    "orderNow": "अब ऑर्डर दें",
+    "teslaBelieves": "टेस्ला इलेक्ट्रिक कारों के साथ दुनिया में स्थायी ऊर्जा के संक्रमण को तेज करने में विश्वास रखता है।",
+    "viewTesla": "टेस्ला संग्रह देखें"
+  }
+}

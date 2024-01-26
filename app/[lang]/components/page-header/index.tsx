@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CountryDropDown } from "./country-dropdown";
 import { TextNavigationDropDown } from "./text-nav-dropdown";
-import { Locale } from "@/i18n.config";
 import { useTranslation } from "@/lib/i18n/client";
+import { Locale } from "@/lib/i18n";
 
 const components: { title: string; href: string; description: string }[] = [
   {

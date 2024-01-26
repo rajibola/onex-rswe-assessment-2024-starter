@@ -2,7 +2,7 @@ import { graphikFont } from "@/assets/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
 import { LocomotiveScroller } from "@/app/[lang]/components/locomotive-scroller";
-import { Locale, i18n } from "@/i18n.config";
+import { Locale, languages } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return languages.map((locale) => ({ lang: locale }));
 }
 
 export default function RootLayout({

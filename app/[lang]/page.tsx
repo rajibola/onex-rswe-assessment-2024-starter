@@ -9,8 +9,7 @@ import SPEC_LIST from "@/app/[lang]/components/data/SPEC_LIST";
 import { Sidebar } from "@/app/[lang]/components/sidebar";
 import { TableWithHeader } from "@/app/[lang]/components/table-with-header";
 import { CarouselDApiDemo } from "@/app/[lang]/components/carousel";
-import { Locale } from "@/i18n.config";
-import { useTranslation } from "@/lib/i18n";
+import { Locale, useTranslation } from "@/lib/i18n";
 import { Button } from "./components/ui/button";
 
 export default async function Home({
@@ -21,10 +20,10 @@ export default async function Home({
   const { t } = await useTranslation(lang);
 
   const ABOUT_CAR_DATA: { text: string; image: string }[] = [
-    { text: t("bottomSection.dieselFuel"), image: Diesel },
-    { text: t("bottomSection.autoTransmission"), image: Transmission },
-    { text: t("bottomSection.miles"), image: Miles },
-    { text: t("bottomSection.displacement"), image: Displacement },
+    { text: "dieselFuel", image: Diesel },
+    { text: "autoTransmission", image: Transmission },
+    { text: "miles", image: Miles },
+    { text: "displacement", image: Displacement },
   ];
 
   return (
@@ -42,7 +41,7 @@ export default async function Home({
           {ABOUT_CAR_DATA.map(({ image, text }) => (
             <div key={text} className="flex items-center gap-4">
               <Image src={image} alt={t(text)} />
-              <p className="text-body1">{t(text)}</p>
+              <p className="text-body1">{t("bottomSection." + text)}</p>
             </div>
           ))}
         </div>
