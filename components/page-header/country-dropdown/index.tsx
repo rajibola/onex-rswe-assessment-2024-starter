@@ -10,32 +10,62 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import React from "react";
+import USA from "@/assets/icon/usa.png";
+import Germany from "@/assets/icon/germany.png";
+import Image, { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/i18n.config";
 
-interface ITextNavigationDropDown {
-  title: string;
-  data: { title: string; href: string; description: string }[];
+const countries: { [x: string]: StaticImageData } = {
+  en: USA,
+  de: Germany,
+};
+interface ICountryDropDown {
+  countryName: string;
+  flag: StaticImageData | any;
 }
 
-export const TextNavigationDropDown = ({
-  title,
-  data,
-}: ITextNavigationDropDown) => {
+export const CountryDropDown = () => {
+  const pathName = usePathname();
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathName) return "/";
+    const segments = pathName.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
+
+  const currentLocale = pathName.split("/")[1];
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="px-2 py-0">
-            {title}
+            <Image
+              src={countries[currentLocale]}
+              alt={"countryName"}
+              width={28}
+              height={18}
+            />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {data.map((component) => (
+            <ul className="grid gap-3 p-0 w-fit">
+              {i18n.locales.map((locale) => (
                 <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+                  className="p-0 w-[70px] h-10 flex items-center justify-center"
+                  key={locale}
+                  href={redirectedPathName(locale)}
                 >
-                  {component.description}
+                  <div className="flex gap-1 items-center uppercase text-overline text-primaryText">
+                    <Image
+                      src={countries[locale]}
+                      alt={locale}
+                      width={28}
+                      height={18}
+                    />
+                    <p>{locale}</p>
+                  </div>
                 </ListItem>
               ))}
             </ul>

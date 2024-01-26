@@ -89,7 +89,7 @@ const config = {
         subtitle2: ["16px", { fontWeight: "600", lineHeight: "20px" }],
         body1: ["20px", { fontWeight: "400", lineHeight: "32px" }],
         body2: ["16px", { fontWeight: "400", lineHeight: "24px" }],
-        overline: ["12px", { fontWeight: "700", lineHeight: "16px" }],
+        overline: ["12px", { fontWeight: "500", lineHeight: "16px" }],
       },
     },
   },

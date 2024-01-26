@@ -2,8 +2,9 @@
 import EVFYLogo from "@/assets/icons/evfy-logo.svg";
 import Image from "next/image";
 
-import { TextNavigationDropDown } from "./text-nav-dropdown";
 import Link from "next/link";
+import { CountryDropDown } from "./country-dropdown";
+import { TextNavigationDropDown } from "./text-nav-dropdown";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -35,7 +36,7 @@ export const PageHeader = () => {
         <TextNavigationDropDown title="EV Guides" data={components} />
       </div>
       <div className="flex gap-8 items-center">
-        <TextNavigationDropDown title="Find EV Cars" data={components} />
+        <CountryDropDown />
         <Link className="text-subtitle2" href={"#"}>
           Log In / Sign Up
         </Link>
