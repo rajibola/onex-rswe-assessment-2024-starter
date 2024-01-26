@@ -1,4 +1,4 @@
-const ACCORDION_DATA = [
+export const ACCORDION_DATA = [
   {
     title: "Description",
     value:
@@ -15,5 +15,3 @@ const ACCORDION_DATA = [
       "Tesla believes in accelerating the worlds transition to sustainable energy with electric cars.",
   },
 ];
-
-export default ACCORDION_DATA;

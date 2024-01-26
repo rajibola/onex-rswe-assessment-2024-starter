@@ -10,10 +10,10 @@ import {
 } from "@/app/[lang]/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import React from "react";
-import USA from "@/assets/icon/usa.png";
-import China from "@/assets/icon/china.png";
-import India from "@/assets/icon/china.png";
-import Germany from "@/assets/icon/germany.png";
+import USA from "@/assets/icons/usa.png";
+import China from "@/assets/icons/china.png";
+import India from "@/assets/icons/india.png";
+import Germany from "@/assets/icons/germany.png";
 import Image, { StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
 import { languages } from "@/lib/i18n";

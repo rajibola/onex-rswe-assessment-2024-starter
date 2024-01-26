@@ -1,16 +1,13 @@
-import Diesel from "@/assets/icons/diesel.svg";
-import Displacement from "@/assets/icons/displacement.svg";
-import Miles from "@/assets/icons/miles.svg";
-import Transmission from "@/assets/icons/transmission.svg";
 import { PageHeader } from "@/app/[lang]/components/page-header";
 import Image from "next/image";
-
-import SPEC_LIST from "@/app/[lang]/components/data/SPEC_LIST";
-import { Sidebar } from "@/app/[lang]/components/sidebar";
-import { TableWithHeader } from "@/app/[lang]/components/table-with-header";
-import { CarouselDApiDemo } from "@/app/[lang]/components/carousel";
+import {
+  TableWithHeader,
+  CustomCarousel,
+  Sidebar,
+} from "@/app/[lang]/components";
 import { Locale, useTranslation } from "@/lib/i18n";
-import { Button } from "./components/ui/button";
+import { Button } from "@/app/[lang]/components/ui/button";
+import { ABOUT_CAR_DATA, SPEC_LIST } from "@/constants";
 
 export default async function Home({
   params: { lang },
@@ -19,19 +16,12 @@ export default async function Home({
 }) {
   const { t } = await useTranslation(lang);
 
-  const ABOUT_CAR_DATA: { text: string; image: string }[] = [
-    { text: "dieselFuel", image: Diesel },
-    { text: "autoTransmission", image: Transmission },
-    { text: "miles", image: Miles },
-    { text: "displacement", image: Displacement },
-  ];
-
   return (
     <main className="min-h-screen items-center justify-between w-full text-primaryText">
       <PageHeader lang={lang} />
       <section className="bg-[#FBFCFE] w-full flex relative h-fit">
-        <div className="w-full sticky top-0">
-          <CarouselDApiDemo />
+        <div className="w-full">
+          <CustomCarousel />
         </div>
         <Sidebar lang={lang} />
       </section>
@@ -62,15 +52,15 @@ export default async function Home({
             })}
           </div>
         </div>
+        <div className="w-full grid place-items-center mt-[70px]">
+          <Button
+            className="bg-transparent h-[62px] px-10 text-subtitle2 text-blue1 border-blue1"
+            variant={"outline"}
+          >
+            {t("bottomSection.showAllSpec")}
+          </Button>
+        </div>
       </section>
-      <div className="w-full grid place-items-center mb-14">
-        <Button
-          className="bg-transparent h-[62px] px-10 text-subtitle2 text-blue1 border-blue1 "
-          variant={"outline"}
-        >
-          {t("bottomSection.showAllSpec")}
-        </Button>
-      </div>
     </main>
   );
 }

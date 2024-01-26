@@ -1,4 +1,4 @@
-const SPEC_LIST: {
+export const SPEC_LIST: {
   title: string;
   showMore?: boolean;
   link?: string;
@@ -18,6 +18,7 @@ const SPEC_LIST: {
   },
   {
     showMore: true,
+    link: "#",
     title: "Interior",
     list: {
       Seating: "5 adults",
@@ -47,5 +48,3 @@ const SPEC_LIST: {
     },
   },
 ];
-
-export default SPEC_LIST;

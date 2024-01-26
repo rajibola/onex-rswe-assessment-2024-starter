@@ -1,10 +1,10 @@
 "use client";
-import EVFYLogo from "@/assets/icons/evfy-logo.svg";
+import EVFYLogo from "@/assets/svgs/evfy-logo.svg";
 import Image from "next/image";
 
 import Link from "next/link";
-import { CountryDropDown } from "./country-dropdown";
-import { TextNavigationDropDown } from "./text-nav-dropdown";
+import { CountryDropDown } from "./CountryDropDown";
+import { TextNavigationDropDown } from "./TextNavigationDropDown";
 import { useTranslation } from "@/lib/i18n/client";
 import { Locale } from "@/lib/i18n";
 

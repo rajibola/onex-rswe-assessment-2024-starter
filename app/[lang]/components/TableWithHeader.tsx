@@ -6,8 +6,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/app/[lang]/components/ui/table";
-import { Locale } from "@/i18n.config";
+import { Locale } from "@/lib/i18n";
 import { useTranslation } from "@/lib/i18n/client";
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 export const TableWithHeader = (props: {
   lang: Locale;
@@ -44,8 +46,14 @@ export const TableWithHeader = (props: {
             </TableRow>
           ))}
         </TableBody>
-        <p className="text-sm text-blue1 mt-6">
+        <p
+          className={cn(
+            "text-sm text-blue1 mt-6 flex items-center gap-2",
+            !spec.link && "underline"
+          )}
+        >
           {spec.showMore ? t("bottomSection.showMore") : null}
+          {spec.link ? <ArrowRight size={16} /> : null}
         </p>
       </Table>
     </div>

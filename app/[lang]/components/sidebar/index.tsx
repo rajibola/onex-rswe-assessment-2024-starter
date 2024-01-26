@@ -1,21 +1,14 @@
 "use client";
 import { Button } from "@/app/[lang]/components/ui/button";
-import Star from "@/assets/icons/star.svg";
+import Star from "@/assets/svgs/star.svg";
 import Image from "next/image";
 import Link from "next/link";
-import ACCORDION_DATA from "@/app/[lang]/components/data/ACCORDION_DATA";
-import { Locale } from "@/i18n.config";
+import { ACCORDION_DATA, COLORS } from "@/constants";
 import { useTranslation } from "@/lib/i18n/client";
 import { useState } from "react";
-import { AccordionList } from "./accordion-list";
+import { AccordionList } from "./AccordionList";
+import { Locale } from "@/lib/i18n";
 import { ColorPicker } from "./color-picker";
-
-const COLORS: { name: string; value: string }[] = [
-  { name: "black", value: "#030303" },
-  { name: "maroon", value: "#D43A55" },
-  { name: "blue", value: "#0036C3" },
-  { name: "silver", value: "#E0E0E0" },
-];
 
 export const Sidebar = ({ lang }: { lang: Locale }) => {
   const { t } = useTranslation(lang);

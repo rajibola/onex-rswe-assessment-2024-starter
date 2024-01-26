@@ -1,8 +1,8 @@
 import { graphikFont } from "@/assets/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
-import { LocomotiveScroller } from "@/app/[lang]/components/locomotive-scroller";
 import { Locale, languages } from "@/lib/i18n";
+import { LocomotiveScroller } from "@/app/[lang]/components/LocomotiveScroller";
 
 export const metadata: Metadata = {
   title: "Create Next App",
