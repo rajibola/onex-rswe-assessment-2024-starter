@@ -17,6 +17,7 @@ const SPEC_LIST: {
     },
   },
   {
+    showMore: true,
     title: "Interior",
     list: {
       Seating: "5 adults",
@@ -37,6 +38,7 @@ const SPEC_LIST: {
     },
   },
   {
+    showMore: true,
     title: "Charging",
     list: {
       "Electric Range": "73 Mi.",

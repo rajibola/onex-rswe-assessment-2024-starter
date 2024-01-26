@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/app/[lang]/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel";
+} from "@/app/[lang]/components/ui/carousel";
 import { useEffect, useState } from "react";
 import Car1 from "@/assets/images/car1.png";
 import Car2 from "@/assets/images/car2.jpeg";

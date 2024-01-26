@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CountryDropDown } from "./country-dropdown";
 import { TextNavigationDropDown } from "./text-nav-dropdown";
+import { Locale } from "@/i18n.config";
+import { useTranslation } from "@/lib/i18n/client";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -27,18 +29,26 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export const PageHeader = () => {
+export const PageHeader = ({ lang }: { lang: Locale }) => {
+  const { t } = useTranslation(lang);
+
   return (
     <header className="h-16 px-[120px] flex items-center justify-between sticky top-0 bg-white z-30">
       <div className="flex gap-8 items-center">
         <Image src={EVFYLogo} alt="EVFY logo" />
-        <TextNavigationDropDown title="Find EV Cars" data={components} />
-        <TextNavigationDropDown title="EV Guides" data={components} />
+        <TextNavigationDropDown
+          title={t("header.findEVCars")}
+          data={components}
+        />
+        <TextNavigationDropDown
+          title={t("header.eVGuides")}
+          data={components}
+        />
       </div>
       <div className="flex gap-8 items-center">
         <CountryDropDown />
         <Link className="text-subtitle2" href={"#"}>
-          Log In / Sign Up
+          {t("header.login")}
         </Link>
       </div>
     </header>

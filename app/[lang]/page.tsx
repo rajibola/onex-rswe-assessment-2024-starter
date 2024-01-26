@@ -2,94 +2,76 @@ import Diesel from "@/assets/icons/diesel.svg";
 import Displacement from "@/assets/icons/displacement.svg";
 import Miles from "@/assets/icons/miles.svg";
 import Transmission from "@/assets/icons/transmission.svg";
-import { PageHeader } from "@/components/page-header";
+import { PageHeader } from "@/app/[lang]/components/page-header";
 import Image from "next/image";
 
-import SPEC_LIST from "@/components/data/SPEC_LIST";
-import { Sidebar } from "@/components/sidebar";
-import { TableWithHeader } from "@/components/table-with-header";
-import { CarouselDApiDemo } from "@/components/carousel";
+import SPEC_LIST from "@/app/[lang]/components/data/SPEC_LIST";
+import { Sidebar } from "@/app/[lang]/components/sidebar";
+import { TableWithHeader } from "@/app/[lang]/components/table-with-header";
+import { CarouselDApiDemo } from "@/app/[lang]/components/carousel";
 import { Locale } from "@/i18n.config";
-import { getDictionary } from "@/lib/dictionary";
-
-const ABOUT_CAR_DATA: { text: string; image: string }[] = [
-  { text: "Diesel Fuel", image: Diesel },
-  { text: "Automatic Transmission", image: Transmission },
-  { text: "11,594 Miles", image: Miles },
-  { text: "3.5L Displacement", image: Displacement },
-];
+import { useTranslation } from "@/lib/i18n";
+import { Button } from "./components/ui/button";
 
 export default async function Home({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const { page } = await getDictionary(lang);
+  const { t } = await useTranslation(lang);
+
+  const ABOUT_CAR_DATA: { text: string; image: string }[] = [
+    { text: t("bottomSection.dieselFuel"), image: Diesel },
+    { text: t("bottomSection.autoTransmission"), image: Transmission },
+    { text: t("bottomSection.miles"), image: Miles },
+    { text: t("bottomSection.displacement"), image: Displacement },
+  ];
+
   return (
     <main className="min-h-screen items-center justify-between w-full text-primaryText">
-      <PageHeader />
+      <PageHeader lang={lang} />
       <section className="bg-[#FBFCFE] w-full flex relative h-fit">
         <div className="w-full sticky top-0">
           <CarouselDApiDemo />
         </div>
-        <Sidebar />
+        <Sidebar lang={lang} />
       </section>
       <section className="py-14 px-[82px] bg-[#FBFCFE]">
-        <h4 className="text-h4 mb-[42px]">About this car {page.home.title}</h4>
+        <h4 className="text-h4 mb-[42px]">{t("bottomSection.aboutThisCar")}</h4>
         <div className="flex flex-wrap gap-[120px]">
           {ABOUT_CAR_DATA.map(({ image, text }) => (
             <div key={text} className="flex items-center gap-4">
-              <Image src={image} alt={text} />
-              <p className="text-body1">{text}</p>
+              <Image src={image} alt={t(text)} />
+              <p className="text-body1">{t(text)}</p>
             </div>
           ))}
         </div>
       </section>
       <section className="py-14 px-[82px] bg-[#FBFCFE]">
-        <h4 className="text-h4 mb-[42px]">Specifications</h4>
+        <h4 className="text-h4 mb-[42px]">
+          {t("bottomSection.specifications")}
+        </h4>
         <div className="grid grid-cols-3 gap-[106px]">
           {SPEC_LIST.map((spec, i) => {
             if (i > 1) return null;
-            return <TableWithHeader spec={spec} key={i} />;
+            return <TableWithHeader lang={lang} spec={spec} key={i} />;
           })}
           <div className="flex flex-col gap-14">
             {SPEC_LIST.map((spec, i) => {
               if (i < 2) return null;
-              return <TableWithHeader spec={spec} key={i} />;
+              return <TableWithHeader lang={lang} spec={spec} key={i} />;
             })}
           </div>
         </div>
       </section>
+      <div className="w-full grid place-items-center mb-14">
+        <Button
+          className="bg-transparent h-[62px] px-10 text-subtitle2 text-blue1 border-blue1 "
+          variant={"outline"}
+        >
+          {t("bottomSection.showAllSpec")}
+        </Button>
+      </div>
     </main>
   );
 }
-
-// const ExpandableContent = () => {
-//   let [ref, { height }] = useMeasure();
-//   const [expand, setExpand] = useState(false);
-
-//   return (
-//     <>
-//       <motion.div animate={{ height }} className="overflow-hidden">
-//         <div ref={ref} className="p-10">
-//           <div>
-//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-//             voluptatibus earum repellendus nisi fugiat nam culpa ipsa ea maiores
-//             corrupti.
-//           </div>
-//           {expand && (
-//             <div>
-//               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//               Perspiciatis, modi. Necessitatibus eligendi autem vel sunt id
-//               repudiandae? Quam, accusantium minima! Tempora cupiditate rem illo
-//               inventore necessitatibus officiis distinctio ex enim soluta
-//               dolorem autem error numquam quasi dignissimos accusantium, eum
-//               fuga!
-//             </div>
-//           )}
-//         </div>
-//       </motion.div>
-//       <button onClick={() => setExpand(!expand)}>CLIKC</button>
-//     </>
-//   );
-// };

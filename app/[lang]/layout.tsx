@@ -1,7 +1,7 @@
 import { graphikFont } from "@/assets/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
-import { LocomotiveScroller } from "@/components/locomotive-scroller";
+import { LocomotiveScroller } from "@/app/[lang]/components/locomotive-scroller";
 import { Locale, i18n } from "@/i18n.config";
 
 export const metadata: Metadata = {

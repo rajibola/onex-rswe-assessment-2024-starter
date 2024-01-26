@@ -7,10 +7,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/app/[lang]/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import React from "react";
 import USA from "@/assets/icon/usa.png";
+import China from "@/assets/icon/china.png";
 import Germany from "@/assets/icon/germany.png";
 import Image, { StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
@@ -19,11 +20,8 @@ import { i18n } from "@/i18n.config";
 const countries: { [x: string]: StaticImageData } = {
   en: USA,
   de: Germany,
+  zh: China,
 };
-interface ICountryDropDown {
-  countryName: string;
-  flag: StaticImageData | any;
-}
 
 export const CountryDropDown = () => {
   const pathName = usePathname();
